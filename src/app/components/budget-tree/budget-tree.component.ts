@@ -17,4 +17,43 @@ export class BudgetTreeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleDepartment() {
+    this.departments.map(department => {
+      department.isActive = false
+      department.groups.map(group => {
+        group.isActive = false
+        group.categories.map(category => category.isActive =false)
+      })
+    })
+  }
+
+  toggleGroup() {
+    this.departments.map(department => {
+      department.isActive = true
+      department.groups.map(group => {
+        group.isActive = false
+        group.categories.map(category => category.isActive =false)
+      })
+    })
+  }
+
+  toggleCategory() {
+    this.departments.map(department => {
+      department.isActive = true
+      department.groups.map(group => {
+        group.isActive = true
+        group.categories.map(category => category.isActive =false)
+      })
+    })
+  }
+
+  toggleSubCategory() {
+    this.departments.map(department => {
+      department.isActive = true
+      department.groups.map(group => {
+        group.isActive = true
+        group.categories.map(category => category.isActive = !category.isActive)
+      })
+    })
+  }
 }

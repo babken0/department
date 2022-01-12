@@ -1,3 +1,7 @@
+<button (click)="toggleDepartment()">Department</button>
+<button (click)="toggleGroup()">Group</button>
+<button (click)="toggleCategory()">Category</button>
+<button (click)="toggleSubCategory()">Sub Category</button>
 <ul id="myUL" *ngIf="departments.length > 0">
   <li *ngFor="let department of departments" ><div class="caret" upDown  (click)="department.isActive = !department.isActive">
     <span>{{ department.department_nm }}</span>
