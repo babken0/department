@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
+import { BudgetTreeComponent } from './components/budget-tree/budget-tree.component';
+import { UpDownDirective } from './directives/up-down.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BudgetTreeComponent,
+    UpDownDirective
   ],
   imports: [
     BrowserModule,

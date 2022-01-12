@@ -1,0 +1,29 @@
+<ul id="myUL" *ngIf="departments.length > 0">
+  <li *ngFor="let department of departments" ><div class="caret" upDown  (click)="department.isActive = !department.isActive">
+    <span>{{ department.department_nm }}</span>
+    <span>{{department.current_department_am}}</span>
+  </div>
+    <ul class="nested" *ngIf="department.isActive">
+      <li *ngFor="let group of department.groups"><div class="caret" upDown  (click)="group.isActive = !group.isActive">
+        <span >{{ group.group_nm }}</span>
+        <span>{{group.current_group_am}}</span>
+      </div>
+        <ul class="nested" *ngIf="group.isActive">
+          <li *ngFor="let category of group.categories"><div class="caret" upDown   (click)="category.isActive = !category.isActive">
+            <span>{{ category.category_nm }}</span>
+            <span>{{category.current_cat_am}}</span>
+          </div>
+            <ul class="nested" *ngIf="category.isActive">
+              <li *ngFor="let subCategory of category.subCategories">
+                {{ subCategory.sub_cat_nm }}
+              <span>{{subCategory.current_sub_cat_am}}</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
